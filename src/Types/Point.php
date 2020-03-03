@@ -40,7 +40,7 @@ class Point extends Geometry
 
     public function toPair()
     {
-        return $this->getLng().' '.$this->getLat();
+        return str_replace(',', '.', $this->getLng() . ' ' . $this->getLat());
     }
 
     public static function fromPair($pair)
@@ -62,7 +62,7 @@ class Point extends Geometry
 
     public function __toString()
     {
-        return $this->getLng().' '.$this->getLat();
+        return $this->toPair();
     }
 
     /**
